@@ -7,6 +7,9 @@
       <li><router-link to="/page1">Page 1</router-link></li>
       <li><router-link to="/page2">Page 2</router-link></li>
       <li><router-link to="/page3">Page 3</router-link></li>
+      <li>
+        <div id="noticeable-icon"></div>
+      </li>
     </ul>
   </div>
 
@@ -15,7 +18,19 @@
   </div>
 </template>
 
-<script setup>
+<script>
+import {config} from './config'
+
+export default {
+  mounted() {
+    this.$nextTick(function () {
+      window.noticeable.render('widget', config.noticeable.iconWidgetId, {selector: '#noticeable-icon'});
+    })
+  },
+  unmounted() {
+    window.noticeable.destroy('widget', config.noticeable.iconWidgetId);
+  }
+}
 </script>
 
 <style>
