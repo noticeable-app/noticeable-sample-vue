@@ -288,4 +288,8 @@ ul#menubar a {
 ul#menubar a:hover {
   text-decoration: none;
 }
+
+#noticeable-icon {
+  width: 39px;
+}
 </style>
